@@ -149,6 +149,7 @@
 
     <br>
     <footer>
+	    <p>Total Page Views: <span id="pageViewsCounter"></span></p>
         <p> 
             Design by Givs01  |  Copyrights &copy; - Center for Water and Sanitation, All rights reserved.
         </p>
@@ -156,5 +157,16 @@
 
 
     <script src="script.js"></script>
+	
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('pageviews.txt')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('pageViewsCounter').innerText = data;
+                });
+        });
+    </script>
 </body>
 </html>
