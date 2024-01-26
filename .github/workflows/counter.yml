@@ -25,7 +25,7 @@ jobs:
       - name: Commit and push changes
         run: |
           git config user.name "${{ github.actor }}"
-          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          git config user.email "gaurav.kushwaha@cept.ac.in"
           git add pageviews.txt
           git commit -m "Update page views counter [skip ci]"
           git push
