@@ -22,4 +22,3 @@ jobs:
           git add pageviews.txt
           git commit -m "Update page views counter [skip ci]"
           git push
-
