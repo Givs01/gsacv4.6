@@ -1,1 +1,25 @@
+name: Update Page Views Counter
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  updateCounter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run JavaScript script
+        run: node counter.js
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          git add pageviews.txt
+          git commit -m "Update page views counter [skip ci]"
+          git push
 
