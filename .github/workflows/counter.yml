@@ -28,4 +28,4 @@ jobs:
           git config user.email "gaurav.kushwaha@cept.ac.in"
           git add pageviews.txt
           git commit -m "Update page views counter [skip ci]"
-          git push
+          git push https://${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git
